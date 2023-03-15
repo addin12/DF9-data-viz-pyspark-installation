@@ -39,4 +39,25 @@ This is the result of a [Dashboard](https://lookerstudio.google.com/reporting/de
 # Data Fellowship 9 Session 5: pySpark Installation
 PySpark is included in the official releases of Spark available in the Apache Spark website. For Python users, PySpark also provides pip installation from PyPI. This is usually for local usage or as a client to connect to a cluster instead of setting up a cluster itself.
 
-This page includes instructions for installing PySpark by using pip, Conda, downloading manually, and building from the source.
+This page includes instructions for installing PySpark by using pip. However you can installing with other methods like using Conda, downloading manually, and building from the source.  
+## Using PyPI
+PySpark installation using PyPI is as follows:  
+![image](https://user-images.githubusercontent.com/25638454/225278149-fc529905-280c-437b-ba38-c214fb5577cb.png)  
+If you want to install extra dependencies for a specific component, you can install it as below:  
+![image](https://user-images.githubusercontent.com/25638454/225278544-65b0321e-e4ea-473d-b97d-8bd175903a86.png)  
+For PySpark with/without a specific Hadoop version, you can install it by using PYSPARK_HADOOP_VERSION environment variables as below:  
+![image](https://user-images.githubusercontent.com/25638454/225278788-79adeb0c-44fb-43a1-a6d5-e09e8ecea19a.png)  
+The default distribution uses Hadoop 3.3 and Hive 2.3. If users specify different versions of Hadoop, the pip installation automatically downloads a different version and use it in PySpark. Downloading it can take a while depending on the network and the mirror chosen. PYSPARK_RELEASE_MIRROR can be set to manually choose the mirror for faster downloading.  
+![image](https://user-images.githubusercontent.com/25638454/225279098-c640fa37-c5b1-430f-aad7-c12962fd00a0.png)  
+It is recommended to use -v option in pip to track the installation and download status.  
+![image](https://user-images.githubusercontent.com/25638454/225279314-3a73b66b-fde8-4c23-a2bc-b32ba94281bd.png)  
+Supported values in PYSPARK_HADOOP_VERSION are:
+
+- without: Spark pre-built with user-provided Apache Hadoop
+
+- 2: Spark pre-built for Apache Hadoop 2.7
+
+- 3: Spark pre-built for Apache Hadoop 3.3 and later (default)
+
+Note that this installation way of PySpark with/without a specific Hadoop version is experimental. It can change or be removed between minor releases.
+
